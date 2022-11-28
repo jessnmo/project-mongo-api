@@ -96,6 +96,8 @@ app.get('/goldenglobes/films/:film', async (req, res) => {
 		const films = await GoldenGlobes.find({ film: film });
 		if (films) {
 			res.status(200).json(films);
+		} else {
+			res.status(404).json({ error: 'No film found' });
 		}
 	} catch (err) {
 		res.status(400).json({ error: 'Invalid film name' });
