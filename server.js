@@ -98,7 +98,7 @@ app.get('/goldenglobes/films/:film', async (req, res) => {
 			res.status(200).json(films);
 		}
 	} catch (err) {
-		res.status(400).json({ error: 'Inavlid film name' });
+		res.status(400).json({ error: 'Invalid film name' });
 	}
 });
 
@@ -118,7 +118,7 @@ app.get('/goldenglobes/release/:year_film', async (req, res) => {
 			year_film: req.params.year_film,
 		});
 		if (releaseYear) {
-			res.json(releaseYear);
+			res.status(200).json(releaseYear);
 		} else {
 			res.status(404).json({ error: 'No film found' });
 		}
