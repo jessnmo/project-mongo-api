@@ -86,7 +86,7 @@ app.get('/goldenglobes/awardyear/:year_award', async (req, res) => {
 			res.status(404).json({ error: 'No nominee found by that year' });
 		}
 	} catch (err) {
-		res.status(404).json({ error: 'Invalid input' });
+		res.status(400).json({ error: 'Invalid input' });
 	}
 });
 
