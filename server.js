@@ -71,7 +71,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/goldenglobes', async (req, res) => {
-	const allGoldenGlobes = await GoldenGlobes.find();
+	const allGoldenGlobes = await GoldenGlobes.find({});
 	res.json(allGoldenGlobes);
 });
 
